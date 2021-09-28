@@ -1,0 +1,12 @@
+pytorch
+torchvision
+cython
+numpy
+matplotlib
+pandas
+scipy
+opencv
+h5py
+tqdm
+cupy
+ipdb

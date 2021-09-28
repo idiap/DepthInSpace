@@ -1,0 +1,7 @@
+{
+  "OUTPUT_DIR": "/path/to/output/dir",
+  "DATA_DIR": "/path/to/data/dir",
+  "SHAPENET_DIR": "/path/to/ShapeNetCore.v2",
+  "CTD_DIR": "/path/to/connecting_the_dots",
+  "LITEFLOWNET_DIR": "/path/to/pytorch-liteflownet"
+}
