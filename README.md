@@ -1,6 +1,7 @@
-# DepthInSpace: Exploitation and Fusion of Multiple Frames of a Video for Structured-Light Depth Estimation
 
-
+> # [ICCV 2021] DepthInSpace: Exploitation and Fusion of Multiple Frames of a Video for Structured-Light Depth Estimation <br>
+> Mohammad Mahdi Johari, Camilla Carta, François Fleuret <br>
+> [Project Page](https://www.idiap.ch/paper/depthinspace/) | [Paper](https://openaccess.thecvf.com/content/ICCV2021/html/Johari_DepthInSpace_Exploitation_and_Fusion_of_Multiple_Video_Frames_for_Structured-Light_ICCV_2021_paper.html)
 
 ## Dependencies
 
@@ -110,7 +111,18 @@ To evaluate a specific checkpoint of a specific network, e.g. the 50th epoch of 
 python train_val.py --architecture multi_frame --cmd retest --epoch 50
 ```
 ### Training/Evaluating on Real Dataset
-Make sure to use `--data_type real` when you want to train or evaluate the models on our real dataset.
+Our captured real dataset can be downloaded from [here](https://www.idiap.ch/en/dataset/depthinspace/index_html). Make sure to use `--data_type real` when you want to train or evaluate the models on our real dataset to use the same train/test split as in our paper.
+
+### Pretrained Networks
+The pretrained networks for synthetic datasets with different projection patterns and the real dataset can be found [here](https://drive.google.com/drive/folders/1uiSElbiQhXxag2VIpXy4lOoueoAEh1ak?usp=sharing). In order to use these networks, make sure `OUTPUT_DIR` in `config.json` corresponds to the proper pretrained directory. Then, use the following for the single-frame model:
+```
+python train_val.py --architecture single_frame --cmd retest --epoch 0
+```
+and the following for the multi-frame model:
+```
+python train_val.py --architecture multi_frame --cmd retest --epoch 0
+```
+Make sure to add `--data_type real` when you want to use the models on our real dataset to use the same train/test split as in our paper.
 
 ### Contact
 You can contact the author through email: mohammad.johari At idiap.ch.
